@@ -30,4 +30,16 @@ class Video {
   List<String> getTags() {
     return tags;
   }
+
+  private String printTags() {
+    String res = "";
+    for (var tag : getTags()) {
+      res += tag + " ";
+    }
+    return res.trim();
+  }
+
+  public String toString() {
+    return String.format("%s (%s) [%s]", getTitle(), getVideoId(), printTags() );
+  }
 }

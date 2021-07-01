@@ -1,6 +1,7 @@
 package com.google;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Run {
@@ -12,6 +13,7 @@ public class Run {
     var scanner = new Scanner(System.in);
     while (true) {
       System.out.print("YT> ");
+
       var input = scanner.nextLine();
       if (input.equalsIgnoreCase("exit")) {
         System.out.println("YouTube has now terminated its execution. " +

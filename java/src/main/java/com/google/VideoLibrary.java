@@ -2,11 +2,7 @@ package com.google;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -14,7 +10,7 @@ import java.util.stream.Collectors;
  */
 class VideoLibrary {
 
-  private final HashMap<String, Video> videos;
+  private final HashMap<String, Video> videos;  // <id, Video>
 
   VideoLibrary() {
     this.videos = new HashMap<>();
@@ -52,4 +48,16 @@ class VideoLibrary {
   Video getVideo(String videoId) {
     return this.videos.get(videoId);
   }
+
+  String getRandomVideoId() {
+    var keys = videos.keySet().toArray();
+    int seed = new Random().nextInt(keys.length);
+    return (String) keys[seed];
+  }
+
+  public Boolean containsVideo(String videoId) {
+    return videos.containsKey(videoId);
+  }
+
+
 }
